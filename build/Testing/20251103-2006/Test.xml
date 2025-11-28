@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-c++"
+	BuildStamp="20251103-2006-Experimental"
+	Name="Nathans-MacBook-Pro.local"
+	Generator="ctest-4.1.2"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="17.0.0.17000404"
+	OSName="macOS"
+	Hostname="Nathans-MacBook-Pro.local"
+	OSRelease="26.1"
+	OSVersion="25B78"
+	OSPlatform="arm64"
+	Is64Bits="1"
+	VendorString="Apple"
+	VendorID="Apple"
+	FamilyID="0"
+	ModelID="0"
+	ModelName="Apple M1 Pro"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2048"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Nov 28 13:04 PST</StartDateTime>
+		<StartTestTime>1764363881</StartTestTime>
+		<TestList/>
+		<EndDateTime>Nov 28 13:04 PST</EndDateTime>
+		<EndTestTime>1764363881</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
