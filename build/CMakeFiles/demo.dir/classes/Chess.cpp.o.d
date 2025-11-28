@@ -1,8 +1,8 @@
 CMakeFiles/demo.dir/classes/Chess.cpp.o: \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Chess.cpp \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Chess.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/ChessPiece.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Game.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Chess.cpp \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Chess.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/ChessPiece.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Game.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -1025,23 +1025,23 @@ CMakeFiles/demo.dir/classes/Chess.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_integral.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/future \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Player.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Player.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Turn.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Bit.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Sprite.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Entity.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/../imgui/imgui.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/../imgui/imconfig.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Turn.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Bit.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Sprite.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Entity.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/../imgui/imgui.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/../imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/BitHolder.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Grid.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/ChessSquare.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/BitBoard.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/MagicBitboards.h
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/BitHolder.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Grid.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/ChessSquare.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/BitBoard.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/MagicBitboards.h

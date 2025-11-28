@@ -5,11 +5,11 @@
 cmake_minimum_required(VERSION 4.1.2)
 
 # CTest Start Step
-set(CTEST_SOURCE_DIRECTORY "/Users/nathanskinner/Downloads/chess-base-main-tutorbranch")
-set(CTEST_BINARY_DIRECTORY "/Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build")
+set(CTEST_SOURCE_DIRECTORY "/Users/nathanskinner/Downloads/chess-ai-wow")
+set(CTEST_BINARY_DIRECTORY "/Users/nathanskinner/Downloads/chess-ai-wow/build")
 
 # CTest Update Step
-set(CTEST_UPDATE_COMMAND "")
+set(CTEST_UPDATE_COMMAND "/usr/bin/git")
 set(CTEST_UPDATE_OPTIONS "")
 set(CTEST_UPDATE_VERSION_ONLY "")
 set(CTEST_NIGHTLY_START_TIME "00:00:00 EDT")
@@ -24,7 +24,7 @@ set(CTEST_SVN_OPTIONS "")
 set(CTEST_SVN_UPDATE_OPTIONS "")
 
 # Git options
-set(CTEST_GIT_COMMAND "")
+set(CTEST_GIT_COMMAND "/usr/bin/git")
 set(CTEST_GIT_INIT_SUBMODULES "")
 set(CTEST_GIT_UPDATE_CUSTOM "")
 set(CTEST_GIT_UPDATE_OPTIONS "")

@@ -244,13 +244,13 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
                 return true;
             }      
     }
-             if (dstx == srcx - 1 && srcx != 0) {
+             if (dstx == srcx - 1 && srcx != 0&& srcy -1 ==dsty) {
         Bit* target = getHolderAt(dstx, dsty).bit();
         if (target != NULL && target->gameTag() > 8) { 
             return true;
         }
             }
-            if (dstx == srcx + 1 && srcx != 7) {
+            if (dstx == srcx + 1 && srcx != 7&& srcy -1 ==dsty) {
         Bit* target = getHolderAt(dstx, dsty).bit();
         if (target != NULL && target->gameTag() > 8) {
             return true;
@@ -267,13 +267,13 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
                 return true;
             }      
     }
-           if (dstx == srcx - 1 && srcx != 0) {
+           if (dstx == srcx - 1 && srcx != 0&& srcy +1 ==dsty) {
         Bit* target = getHolderAt(dstx, dsty).bit();
         if (target != NULL && target->gameTag() < 8) { 
             return true;
         }
             }
-            if (dstx == srcx + 1 && srcx != 7) {
+            if (dstx == srcx + 1 && srcx != 7&& srcy +1 ==dsty) {
         Bit* target = getHolderAt(dstx, dsty).bit();
         if (target != NULL && target->gameTag() < 8) {
             return true;

@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/nathanskinner/Downloads/chess-base-main-tutorbranch
-BuildDirectory: /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build
+SourceDirectory: /Users/nathanskinner/Downloads/chess-ai-wow
+BuildDirectory: /Users/nathanskinner/Downloads/chess-ai-wow/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/opt/homebrew/bin/cmake" "/Users/nathanskinner/Downloads/chess-base-main-tutorbranch"
+ConfigureCommand: "/opt/homebrew/bin/cmake" "/Users/nathanskinner/Downloads/chess-ai-wow"
 MakeCommand: /opt/homebrew/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,9 +58,9 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
 Compiler: /usr/bin/c++

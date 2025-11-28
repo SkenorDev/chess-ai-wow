@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/nathanskinner/Downloads/chess-base-main-tutorbranch
+CMAKE_SOURCE_DIR = /Users/nathanskinner/Downloads/chess-ai-wow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build
+CMAKE_BINARY_DIR = /Users/nathanskinner/Downloads/chess-ai-wow/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	/opt/homebrew/bin/cpack --config ./CPackSourceConfig.cmake /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build/CPackSourceConfig.cmake
+	/opt/homebrew/bin/cpack --config ./CPackSourceConfig.cmake /Users/nathanskinner/Downloads/chess-ai-wow/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -117,9 +117,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build/CMakeFiles /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles /Users/nathanskinner/Downloads/chess-ai-wow/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

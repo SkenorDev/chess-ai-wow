@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/nathanskinner/Downloads/chess-base-main-tutorbranch
+CMAKE_SOURCE_DIR = /Users/nathanskinner/Downloads/chess-ai-wow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build
+CMAKE_BINARY_DIR = /Users/nathanskinner/Downloads/chess-ai-wow/build
 
 # Utility rule file for NightlyCoverage.
 
@@ -85,6 +85,6 @@ CMakeFiles/NightlyCoverage.dir/clean:
 .PHONY : CMakeFiles/NightlyCoverage.dir/clean
 
 CMakeFiles/NightlyCoverage.dir/depend:
-	cd /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/nathanskinner/Downloads/chess-base-main-tutorbranch /Users/nathanskinner/Downloads/chess-base-main-tutorbranch /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/nathanskinner/Downloads/chess-ai-wow/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/nathanskinner/Downloads/chess-ai-wow /Users/nathanskinner/Downloads/chess-ai-wow /Users/nathanskinner/Downloads/chess-ai-wow/build /Users/nathanskinner/Downloads/chess-ai-wow/build /Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NightlyCoverage.dir/depend
 

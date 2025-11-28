@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/nathanskinner/Downloads/chess-base-main-tutorbranch/build/cmake_install.cmake"
+		"/Users/nathanskinner/Downloads/chess-ai-wow/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

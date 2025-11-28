@@ -1,8 +1,8 @@
 CMakeFiles/demo.dir/Application.cpp.o: \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/Application.cpp \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/Application.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/imgui/imgui.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/imgui/imconfig.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/Application.cpp \
+  /Users/nathanskinner/Downloads/chess-ai-wow/Application.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/imgui/imgui.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -69,8 +69,8 @@ CMakeFiles/demo.dir/Application.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/TicTacToe.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Game.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/TicTacToe.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Game.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/version \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
@@ -1033,20 +1033,20 @@ CMakeFiles/demo.dir/Application.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_integral.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/future \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Player.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Player.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Turn.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Bit.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Sprite.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Entity.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/../imgui/imgui.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/BitHolder.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Grid.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/ChessSquare.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Checkers.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Othello.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Connect4.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/Chess.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/ChessPiece.h \
-  /Users/nathanskinner/Downloads/chess-base-main-tutorbranch/classes/BitBoard.h
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Turn.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Bit.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Sprite.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Entity.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/../imgui/imgui.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/BitHolder.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Grid.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/ChessSquare.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Checkers.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Othello.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Connect4.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/Chess.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/ChessPiece.h \
+  /Users/nathanskinner/Downloads/chess-ai-wow/classes/BitBoard.h
