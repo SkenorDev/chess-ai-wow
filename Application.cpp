@@ -62,13 +62,25 @@ namespace ClassGame {
                         game = new Connect4();
                         game->setUpBoard();
                     }
-                    if (ImGui::Button("Start Chess")) {
+                                        if (ImGui::Button("Start Chess")) {
                         game = new Chess();
+                        game->setUpBoard();
+                        
+                    }
+                    if (ImGui::Button("Start Chess Player 1")) {
+                        game = new Chess();
+                        game->setUpBoard();
                         game->setNumberOfPlayers(2);
                         //game->_gameOptions.AIPlaying = true;
                         game->_gameOptions.AIPlayer = true;
                         game->setAIPlayer(1);
+                    
+                        
+                    }
+                    if (ImGui::Button("Start Chess Player 2")) {
+                        game = new Chess();
                         game->setUpBoard();
+                        game->setAIPlayer(1);
                         
                     }
                 } else {
