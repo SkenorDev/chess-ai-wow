@@ -64,7 +64,10 @@ namespace ClassGame {
                     }
                     if (ImGui::Button("Start Chess")) {
                         game = new Chess();
-                        game->setAIPlayer(0);
+                        game->setNumberOfPlayers(2);
+                        //game->_gameOptions.AIPlaying = true;
+                        game->_gameOptions.AIPlayer = true;
+                        game->setAIPlayer(1);
                         game->setUpBoard();
                         
                     }

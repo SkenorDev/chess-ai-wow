@@ -51,7 +51,7 @@ void Chess::setUpBoard()
     FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
     //FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
    if(gameHasAI()){
-    setAIPlayer(AI_PLAYER);
+    setAIPlayer(1);
    }
     startGame();
 }
