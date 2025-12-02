@@ -247,7 +247,7 @@ void Chess::updateAI()
         char srcPce = state[srcSquare];
         state[dstSquare] = srcPce;
         state[srcSquare] = '0';
-            int moveVal = -negamax(state, 3, negInfinite,posInfinite ,HUMAN_PLAYER);
+            int moveVal = -negamax(state, 4, negInfinite,posInfinite ,HUMAN_PLAYER);
             // Undo the move
             state[dstSquare] = oldDst;
             state[srcSquare] = srcPce;
@@ -256,6 +256,7 @@ void Chess::updateAI()
                 bestMove = move;
                 bestVal = moveVal;
             }
+            
         }
         if(bestVal != negInfinite){
             int srcSquare=bestMove.from;
@@ -296,6 +297,13 @@ int Chess::negamax(std::string& state, int depth, int alpha, int beta, int playe
             if (moveVal > bestVal) {
                 bestVal = moveVal;
             }
+            if (bestVal > alpha) {
+            alpha = bestVal;
+        }
+
+        if (alpha >= beta) {
+            break; 
+        }
         }
     return bestVal;
 }
@@ -308,7 +316,7 @@ values['R']=500;
 values['Q']=900;
 values['K']=2000;
 
-    values['-']=100;
+    values['p']=100;
 values['n']=-300;
 values['b']=-400;
 values['r']=-500;
