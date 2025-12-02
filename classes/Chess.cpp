@@ -234,7 +234,7 @@ void Chess::updateAI()
 {
     //int currentPlayer = getCurrentPlayer()->playerNumber();
     auto state= stateString();
-    auto _moves = generateAllMoves(state,2);
+    auto _moves = generateAllMoves(state,getCurrentPlayer()->playerNumber());
     int bestVal = negInfinite;
     BitMove bestMove;
 
@@ -371,7 +371,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
     std::vector<BitMove> moves;
     moves.reserve(256);
     auto board = state;
-    bool whiteTurn = (turn == 1);
+    bool whiteTurn = (turn == 0);
     for (int sq = 0; sq < 64; ++sq) {
         char p = board[sq];
         if (p == '0') continue;
@@ -748,7 +748,7 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
         });
 
         int fromSquare = srcSquare->getSquareIndex();
-        BitBoard kingBoard(1ULL << fromSquare); //where whatever piece is located
+        BitBoard kingBoard(1ULL << fromSquare);
         uint64_t validTargets = ~friendlyPieces; 
 
         std::vector<BitMove> knightmoves;
