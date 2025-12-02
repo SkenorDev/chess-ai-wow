@@ -443,7 +443,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
                     }
                 }
             }
-            if (p == 'B') {
+            if (p == 'b') {
                 static const int dirs[4] = { 9, -9, 7, -7 };
                 for (int d : dirs) {
                     int to = sq;
@@ -469,7 +469,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
             }
 
             // Rook
-            if (p == 'R') {
+            if (p == 'r') {
                 static const int dirs[4] = { 8, -8, 1, -1 };
                 for (int d : dirs) {
                     int to = sq;
@@ -494,7 +494,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
             }
 
             // Queen
-            if (p == 'Q') {
+            if (p == 'q') {
                 static const int dirs[8] = { 8, -8, 1, -1, 9, -9, 7, -7 };
                 for (int d : dirs) {
                     int to = sq;
