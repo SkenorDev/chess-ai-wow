@@ -73,14 +73,14 @@ namespace ClassGame {
                         game->setNumberOfPlayers(2);
                         //game->_gameOptions.AIPlaying = true;
                         game->_gameOptions.AIPlayer = true;
-                        game->setAIPlayer(1);
+                        game->setAIPlayer(0);
                     
                         
                     }
                     if (ImGui::Button("Start Chess Player 2")) {
                         game = new Chess();
                         game->setUpBoard();
-                        game->setAIPlayer(2);
+                        game->setAIPlayer(1);
                         
                     }
                 } else {

@@ -185,3 +185,124 @@ void Chess::generatePawnMoves(std::vector<BitMove>& moves, BitBoard pawnBoard, u
 //     generateQueenMoves(moves, _bitboards[WHITE_QUEENS + bitIndex], _bitboards[OCCUPANCY].getData(), _bitboards[WHITE_ALL_PIECES + BitIndex].getData());
 //      return moves;
 // }
+if (p == 'n') {
+            static const int knightMoves[8] = {
+                17, 15, 10, 6, -6, -10, -15, -17
+            };
+            for (int d : knightMoves) {
+                int to = sq + d;
+                if (to < 0 || to >= 64) continue;
+
+            int f1 = fileOf(sq);
+                int f2 = fileOf(to);
+                if (abs(f1 - f2) > 2) continue;
+
+                if (board[to] == '\0' || !sameSide(p, board[to])) {
+                    moves.emplace_back(sq, to, Knight);
+                    
+                }
+            }
+            continue;
+        }
+        if (p == 'k') {
+ static const int kingMoves[8] = {
+                1, -1, 8, -8, 9, -9, 7, -7
+            };
+            for (int d :  kingMoves) {
+                int to = sq + d;
+                if (to < 0 || to >= 64) continue;
+
+            int f1 = fileOf(sq);
+                int f2 = fileOf(to);
+                if (abs(f1 - f2) > 2) continue;
+
+                if (board[to] == '\0' || !sameSide(p, board[to])) {
+                    moves.emplace_back(sq, to, King);
+                    continue;
+                }
+            }
+        }
+         if (p == 'b') {
+            static const int dirs[4] = { 9, -9, 7, -7 };
+            for (int d : dirs) {
+                int to = sq;
+                while (true) {
+                    int f1 = fileOf(to);
+                    to += d;
+                    if (to < 0 || to >= 64) break;
+
+                    int f2 = fileOf(to);
+                    if (abs(f1 - f2) != 1) break;  // wrapped
+
+                    if (board[to] == '\0') {
+                        moves.emplace_back(sq, to, Bishop);
+                    } else {
+    if (!sameSide(p, board[to])) {
+        moves.emplace_back(sq, to, Bishop);
+    }
+    break;  // stop sliding in this direction
+}
+                }
+            }
+        }
+        if (p == 'r') {
+            static const int dirs[4] = { 8, -8, 1, -1 };
+            for (int d : dirs) {
+                int to = sq;
+                while (true) {
+                    int f1 = fileOf(to);
+                    to += d;
+                    if (to < 0 || to >= 64) break;
+
+                    int f2 = fileOf(to);
+                    if (d == 1 || d == -1) {
+                        if (f1 == f2) {
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if (board[to] == '\0') {
+                        moves.emplace_back(sq, to, Rook);
+                    } else {
+                        if (!sameSide(p, board[to])) {
+                            moves.emplace_back(sq, to, Rook);
+                        }
+                       continue;
+                    }
+                }
+            }
+        }
+         if (p == 'q') {
+            static const int dirs[8] = { 
+                8, -8, 1, -1, 9, -9, 7, -7 
+            };
+            for (int d : dirs) {
+                int to = sq;
+                while (true) {
+                    int f1 = fileOf(to);
+                    to += d;
+                    if (to < 0 || to >= 64) break;
+
+                    int f2 = fileOf(to);
+
+                    // Horizontal wrap check
+                    if (d == 1 || d == -1) {
+                        if (f1 != f2) break;
+                    }
+                    // Diagonal wrap check
+                    if (d == 9 || d == -9 || d == 7 || d == -7) {
+                        if (abs(f1 - f2) != 1) break;
+                    }
+
+                    if (board[to] == '\0') {
+                        moves.emplace_back(sq, to, Queen);
+                    } else {
+                        if (!sameSide(p, board[to])) {
+                            moves.emplace_back(sq, to, Queen);
+                        }
+                       continue;
+                    }
+                }
+            }
+        }

@@ -225,14 +225,6 @@ void Chess::generateKingMoves(std::vector<BitMove>& moves, BitBoard kingBoard, u
     });
 }
 
-inline bool whiteCheck(char c) { return c >= 'a' && c <= 'z'; }
-inline bool blackCheck(char c) { return c >= 'A' && c <= 'Z'; }
-inline bool sameSide(char a, char b) {
-    return (whiteCheck(a) && whiteCheck(b)) || (blackCheck(a) && blackCheck(b));
-}
-
-inline int fileOf(int idx) { return idx % 8; }
-inline int rankOf(int idx) { return idx / 8; }
 
 
 
@@ -240,8 +232,9 @@ inline int rankOf(int idx) { return idx / 8; }
 // 21 mins in nov 21 for explanation of generate all moves needs
 void Chess::updateAI() 
 {
+    //int currentPlayer = getCurrentPlayer()->playerNumber();
     auto state= stateString();
-    auto _moves = generateAllMoves(state,0);
+    auto _moves = generateAllMoves(state,2);
     int bestVal = negInfinite;
     BitMove bestMove;
 
@@ -254,7 +247,7 @@ void Chess::updateAI()
         char srcPce = state[srcSquare];
         state[dstSquare] = srcPce;
         state[srcSquare] = '0';
-            int moveVal = -negamax(state, 2, negInfinite,posInfinite ,HUMAN_PLAYER);
+            int moveVal = -negamax(state, 3, negInfinite,posInfinite ,HUMAN_PLAYER);
             // Undo the move
             state[dstSquare] = oldDst;
             state[srcSquare] = srcPce;
@@ -267,12 +260,16 @@ void Chess::updateAI()
         if(bestVal != negInfinite){
             int srcSquare=bestMove.from;
             int dstSquare = bestMove.to;
-            BitHolder& src =getHolderAt(srcSquare&7,srcSquare/8);
-            BitHolder& dst =getHolderAt(dstSquare&7, dstSquare/8);
+             BitHolder& src =getHolderAt(srcSquare&7,srcSquare/8);
+             BitHolder& dst =getHolderAt(dstSquare&7, dstSquare/8);
             Bit* bit =src.bit();
+            
             dst.dropBitAtPoint(bit, ImVec2(0,0));
             src.setBit(nullptr);
             bitMovedFromTo(*bit,src,dst);
+        }
+        else{
+           // printf("uh oh \n");
         }
     };
 int Chess::negamax(std::string& state, int depth, int alpha, int beta, int playerColor) {
@@ -313,7 +310,7 @@ values['K']=2000;
 
     values['-']=100;
 values['n']=-300;
-values['n']=-400;
+values['b']=-400;
 values['r']=-500;
 values['q']=-900;
 values['k']=-2000;
@@ -362,228 +359,327 @@ std::array<char, 64> Chess::fenToArray64(const std::string& fen) {
 
     return board;
 }
-   
+   inline bool whiteCheck(char c) { return c >= 'a' && c <= 'z'; }
+inline bool blackCheck(char c) { return c >= 'A' && c <= 'Z'; }
+inline bool sameSide(char a, char b) {
+    return (whiteCheck(a) && whiteCheck(b)) || (blackCheck(a) && blackCheck(b));
+}
+
+inline int fileOf(int idx) { return idx % 8; }
+inline int rankOf(int idx) { return idx / 8; }
 std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
     std::vector<BitMove> moves;
     moves.reserve(256);
-
-    auto board = fenToArray64(state);
-    bool whiteTurn = (turn == 0);
+    auto board = state;
+    bool whiteTurn = (turn == 1);
     for (int sq = 0; sq < 64; ++sq) {
         char p = board[sq];
-        if (p == '\0') continue;
+        if (p == '0') continue;
 
-     if (whiteTurn) {
-    if (p == 'p') {
-        printf("generating pawn\n");
+        if (!whiteTurn) {
+            if (p == 'p') {
+                int f = fileOf(sq);
 
-        int f = fileOf(sq);
-
-        // single push (sq - 8)
-        if (sq - 8 >= 0 && board[sq - 8] == '\0') {
-            moves.emplace_back(sq, sq - 8, Pawn);
-        }
-
-        // double push (white starts on rank 6 = squares 48–55)
-        if (sq >= 48 && sq <= 55) {
-            if (board[sq - 8] == '\0' && board[sq - 16] == '\0') {
-                moves.emplace_back(sq, sq - 16, Pawn);
-            }
-        }
-
-        // capture left (sq - 9)
-        if (f > 0 && sq - 9 >= 0) {
-            if (board[sq - 9] != '\0' && !sameSide(p, board[sq - 9])) {
-                moves.emplace_back(sq, sq - 9, Pawn);
-            }
-        }
-
-        // capture right (sq - 7)
-        if (f < 7 && sq - 7 >= 0) {
-            if (board[sq - 7] != '\0' && !sameSide(p, board[sq - 7])) {
-                moves.emplace_back(sq, sq - 7, Pawn);
-            }
-        }
-    }
-}
-      // Black Turn
-      else {
-    if (p == 'P') {
-        printf("generating pawn\n");
-        int f = fileOf(sq);
-
-        // single push (sq + 8)
-        if (sq + 8 < 64 && board[sq + 8] == '\0') {
-            moves.emplace_back(sq, sq + 8, Pawn);
-        }
-
-        // double push (black starts on rank 1 = squares 8–15)
-        if (sq >= 8 && sq <= 15) {
-            if (board[sq + 8] == '\0' && board[sq + 16] == '\0') {
-                moves.emplace_back(sq, sq + 16, Pawn);
-            }
-        }
-
-        // capture left (sq + 7)
-        if (f > 0 && sq + 7 < 64) {
-            if (board[sq + 7] != '\0' && !sameSide(p, board[sq + 7])) {
-                moves.emplace_back(sq, sq + 7, Pawn);
-            }
-        }
-
-        // capture right (sq + 9)
-        if (f < 7 && sq + 9 < 64) {
-            if (board[sq + 9] != '\0' && !sameSide(p, board[sq + 9])) {
-                moves.emplace_back(sq, sq + 9, Pawn);
-            }
-        }
-    }
-}
- if (p == 'n' || p == 'N') {
-            printf("generating knight\n");
-            static const int knightMoves[8] = {
-                17, 15, 10, 6, -6, -10, -15, -17
-            };
-            for (int d : knightMoves) {
-                int to = sq + d;
-                if (to < 0 || to >= 64) continue;
-
-                // Prevent wrap across files
-                int f1 = fileOf(sq);
-                int f2 = fileOf(to);
-                if (abs(f1 - f2) > 2) continue;
-
-                if (board[to] == '\0' || !sameSide(p, board[to])) {
-                    moves.emplace_back(sq, to, Knight);
+                // single push (sq + 8)
+                if (sq + 8 < 64 && board[sq + 8] == '0') {
+                    moves.emplace_back(sq, sq + 8, Pawn);
                 }
-            }
-        }
 
-        // -----------------------
-        // KING
-        // -----------------------
-        if (p == 'k' || p == 'K') {
-            printf("generating king\n");
-            static const int kingMoves[8] = {
-                1, -1, 8, -8, 9, -9, 7, -7
-            };
-            for (int d : kingMoves) {
-                int to = sq + d;
-                if (to < 0 || to >= 64) continue;
-
-                int f1 = fileOf(sq);
-                int f2 = fileOf(to);
-                if (abs(f1 - f2) > 1) continue;
-
-                if (board[to] == '\0' || !sameSide(p, board[to])) {
-                    moves.emplace_back(sq, to, King);
+                // double push (black starts on rank 1 = squares 8–15)
+                if (sq >= 8 && sq <= 15) {
+                    if (board[sq + 8] == '0' && board[sq + 16] == '0') {
+                        moves.emplace_back(sq, sq + 16, Pawn);
+                    }
                 }
+
+                // capture left (sq + 7)
+                if (f > 0 && sq + 7 < 64) {
+                    if (board[sq + 7] != '0' && !sameSide(p, board[sq + 7])) {
+                        moves.emplace_back(sq, sq + 7, Pawn);
+                    }
+                }
+
+                // capture right (sq + 9)
+                if (f < 7 && sq + 9 < 64) {
+                    if (board[sq + 9] != '0' && !sameSide(p, board[sq + 9])) {
+                        moves.emplace_back(sq, sq + 9, Pawn);
+                    }
+                }
+                continue;
             }
-        }
+            if (p == 'n') {
+                static const int knightMoves[8] = {
+                    17, 15, 10, 6, -6, -10, -15, -17
+                };
+                for (int d : knightMoves) {
+                    int to = sq + d;
+                    if (to < 0 || to >= 64) continue;
 
-        // -----------------------
-        // BISHOP
-        // -----------------------
-        if (p == 'b' || p == 'B') {
-            printf("generating b\n");
-            static const int dirs[4] = { 9, -9, 7, -7 };
-            for (int d : dirs) {
-                int to = sq;
-                while (true) {
-                    int f1 = fileOf(to);
-                    to += d;
-                    if (to < 0 || to >= 64) break;
-
+                    int f1 = fileOf(sq);
                     int f2 = fileOf(to);
-                    if (abs(f1 - f2) != 1) break;  // wrapped
+                    if (abs(f1 - f2) > 2) continue;
 
-                    if (board[to] == '\0') {
-                        moves.emplace_back(sq, to, Bishop);
-                    } else {
-                        if (!sameSide(p, board[to])) {
-                            moves.emplace_back(sq, to, Bishop);
-                        }
-                        break;
+                    if (board[to] == '0' || !sameSide(p, board[to])) {
+                        moves.emplace_back(sq, to, Knight);
+                    }
+                }
+                continue;
+            }
+            if (p == 'k') {
+                static const int kingMoves[8] = {
+                    1, -1, 8, -8, 9, -9, 7, -7
+                };
+                for (int d : kingMoves) {
+                    int to = sq + d;
+                    if (to < 0 || to >= 64) continue;
+
+                    int f1 = fileOf(sq);
+                    int f2 = fileOf(to);
+                    if (abs(f1 - f2) > 2) continue;
+
+                    if (board[to] == '0' || !sameSide(p, board[to])) {
+                        moves.emplace_back(sq, to, King);
+                        continue;
                     }
                 }
             }
-        }
+            if (p == 'B') {
+                static const int dirs[4] = { 9, -9, 7, -7 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
 
-        // -----------------------
-        // ROOK
-        // -----------------------
-        if (p == 'r' || p == 'R') {
-            printf("generating r\n");
-            static const int dirs[4] = { 8, -8, 1, -1 };
-            for (int d : dirs) {
-                int to = sq;
-                while (true) {
-                    int f1 = fileOf(to);
-                    to += d;
-                    if (to < 0 || to >= 64) break;
+                        int f2 = fileOf(to);
+                        if (abs(f1 - f2) != 1) break;  // wrap-around check
 
-                    int f2 = fileOf(to);
-                    if (d == 1 || d == -1) {
-                        if (f1 == f2) {
-                            // same rank → OK
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Bishop);
                         } else {
+                            // Stop sliding after encountering any piece:
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Bishop);
+                            }
+                            break;  // crucial break here to stop moving beyond this piece
+                        }
+                    }
+                }
+            }
+
+            // Rook
+            if (p == 'R') {
+                static const int dirs[4] = { 8, -8, 1, -1 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
+
+                        int f2 = fileOf(to);
+                        if ((d == 1 || d == -1) && f1 != f2) break;  // horizontal wrap check
+
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Rook);
+                        } else {
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Rook);
+                            }
+                            break;  // must break here instead of continue
+                        }
+                    }
+                }
+            }
+
+            // Queen
+            if (p == 'Q') {
+                static const int dirs[8] = { 8, -8, 1, -1, 9, -9, 7, -7 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
+
+                        int f2 = fileOf(to);
+
+                        // Horizontal wrap check
+                        if ((d == 1 || d == -1) && f1 != f2) break;
+
+                        // Diagonal wrap check
+                        if ((d == 9 || d == -9 || d == 7 || d == -7) && abs(f1 - f2) != 1) break;
+
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Queen);
+                        } else {
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Queen);
+                            }
                             break;
                         }
                     }
-
-                    if (board[to] == '\0') {
-                        moves.emplace_back(sq, to, Rook);
-                    } else {
-                        if (!sameSide(p, board[to])) {
-                            moves.emplace_back(sq, to, Rook);
-                        }
-                        break;
-                    }
                 }
             }
         }
+        // White Turn
+        else {
+            if (p == 'P') {
+                int f = fileOf(sq);
 
-        // -----------------------
-        // QUEEN
-        // -----------------------
-        if (p == 'q' || p == 'Q') {
-            printf("generating q\n");
-            static const int dirs[8] = { 
-                8, -8, 1, -1, 9, -9, 7, -7 
-            };
-            for (int d : dirs) {
-                int to = sq;
-                while (true) {
-                    int f1 = fileOf(to);
-                    to += d;
-                    if (to < 0 || to >= 64) break;
+                // single push (sq - 8)
+                if (sq - 8 >= 0 && board[sq - 8] == '0') {
+                    moves.emplace_back(sq, sq - 8, Pawn);
+                }
 
+                // double push (white starts on rank 6 = squares 48–55)
+                if (sq >= 48 && sq <= 55) {
+                    if (board[sq - 8] == '0' && board[sq - 16] == '0') {
+                        moves.emplace_back(sq, sq - 16, Pawn);
+                    }
+                }
+
+                // capture left (sq - 9)
+                if (f > 0 && sq - 9 >= 0) {
+                    if (board[sq - 9] != '0' && !sameSide(p, board[sq - 9])) {
+                        moves.emplace_back(sq, sq - 9, Pawn);
+                    }
+                }
+
+                // capture right (sq - 7)
+                if (f < 7 && sq - 7 >= 0) {
+                    if (board[sq - 7] != '0' && !sameSide(p, board[sq - 7])) {
+                        moves.emplace_back(sq, sq - 7, Pawn);
+                    }
+                }
+                continue;
+            }
+
+            if (p == 'N') {
+                static const int knightMoves[8] = {
+                    17, 15, 10, 6, -6, -10, -15, -17
+                };
+                for (int d : knightMoves) {
+                    int to = sq + d;
+                    if (to < 0 || to >= 64) continue;
+
+                    int f1 = fileOf(sq);
                     int f2 = fileOf(to);
+                    if (abs(f1 - f2) > 2) continue;
 
-                    // Horizontal wrap check
-                    if (d == 1 || d == -1) {
-                        if (f1 != f2) break;
+                    if (board[to] == '0' || !sameSide(p, board[to])) {
+                        moves.emplace_back(sq, to, Knight);
                     }
-                    // Diagonal wrap check
-                    if (d == 9 || d == -9 || d == 7 || d == -7) {
-                        if (abs(f1 - f2) != 1) break;
-                    }
+                }
+                continue;
+            }
 
-                    if (board[to] == '\0') {
-                        moves.emplace_back(sq, to, Queen);
-                    } else {
-                        if (!sameSide(p, board[to])) {
-                            moves.emplace_back(sq, to, Queen);
+            if (p == 'K') {
+                static const int kingMoves[8] = {
+                    1, -1, 8, -8, 9, -9, 7, -7
+                };
+                for (int d : kingMoves) {
+                    int to = sq + d;
+                    if (to < 0 || to >= 64) continue;
+
+                    int f1 = fileOf(sq);
+                    int f2 = fileOf(to);
+                    if (abs(f1 - f2) > 2) continue;
+
+                    if (board[to] == '0' || !sameSide(p, board[to])) {
+                        moves.emplace_back(sq, to, King);
+                    }
+                }
+            }
+
+            // Bishop
+            if (p == 'B') {
+                static const int dirs[4] = { 9, -9, 7, -7 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
+
+                        int f2 = fileOf(to);
+                        if (abs(f1 - f2) != 1) break;  // wrap-around check
+
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Bishop);
+                        } else {
+                            // Stop sliding after encountering any piece:
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Bishop);
+                            }
+                            break;  // crucial break here to stop moving beyond this piece
                         }
-                        break;
+                    }
+                }
+            }
+
+            // Rook
+            if (p == 'R') {
+                static const int dirs[4] = { 8, -8, 1, -1 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
+
+                        int f2 = fileOf(to);
+                        if ((d == 1 || d == -1) && f1 != f2) break;  // horizontal wrap check
+
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Rook);
+                        } else {
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Rook);
+                            }
+                            break;  // must break here instead of continue
+                        }
+                    }
+                }
+            }
+
+            // Queen
+            if (p == 'Q') {
+                static const int dirs[8] = { 8, -8, 1, -1, 9, -9, 7, -7 };
+                for (int d : dirs) {
+                    int to = sq;
+                    while (true) {
+                        int f1 = fileOf(to);
+                        to += d;
+                        if (to < 0 || to >= 64) break;
+
+                        int f2 = fileOf(to);
+
+                        // Horizontal wrap check
+                        if ((d == 1 || d == -1) && f1 != f2) break;
+
+                        // Diagonal wrap check
+                        if ((d == 9 || d == -9 || d == 7 || d == -7) && abs(f1 - f2) != 1) break;
+
+                        if (board[to] == '0') {
+                            moves.emplace_back(sq, to, Queen);
+                        } else {
+                            if (!sameSide(p, board[to])) {
+                                moves.emplace_back(sq, to, Queen);
+                            }
+                            break;
+                        }
                     }
                 }
             }
         }
+
     }
 
     return moves;
 }
+
 bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
 {
     
@@ -592,7 +688,10 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
 
     int pieceType = bit.gameTag() & 0x7F;
     int piecePlayer = (bit.gameTag() & 128) ? 1 : 0;
-
+     int currentPlayer = getCurrentPlayer()->playerNumber();
+            if (piecePlayer != currentPlayer) {
+                    return false;
+                }
     if (pieceType == Knight){
        
         int currentPlayer = getCurrentPlayer()->playerNumber();
@@ -618,12 +717,11 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
         int fromSquare = srcSquare->getSquareIndex();
         BitBoard knightBoard(1ULL << fromSquare); //where whatever piece is located
         uint64_t validTargets = ~friendlyPieces; 
-
-        std::vector<BitMove> moves;
-        generateKnightMoves(moves, knightBoard, validTargets);
+        std::vector<BitMove> knightmoves;
+        generateKnightMoves(knightmoves, knightBoard, validTargets);
 
         int toSquare = dstSquare->getSquareIndex();
-        for (const BitMove& move : moves) {
+        for (const BitMove& move : knightmoves) {
             if (move.to == toSquare) {
                 return true;
             }
@@ -653,11 +751,11 @@ bool Chess::canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst)
         BitBoard kingBoard(1ULL << fromSquare); //where whatever piece is located
         uint64_t validTargets = ~friendlyPieces; 
 
-        std::vector<BitMove> moves;
-        generateKingMoves(moves, kingBoard, validTargets);
+        std::vector<BitMove> knightmoves;
+        generateKingMoves(knightmoves, kingBoard, validTargets);
 
         int toSquare = dstSquare->getSquareIndex();
-        for (const BitMove& move : moves) {
+        for (const BitMove& move : knightmoves) {
             if (move.to == toSquare) {
                 return true;
             }
@@ -895,7 +993,7 @@ if(pieceType==Rook && player==0){
 while(srcx+xoffset<7){
     xoffset++;
     Bit* target = getHolderAt(srcx+xoffset, srcy).bit();
-    if (target != NULL && target->gameTag() <127){
+    if (target != NULL && target->gameTag() <100){
         xoffset=9;
     }
     if (dstx==srcx+xoffset&&dsty==srcy && xoffset<9){
@@ -906,7 +1004,7 @@ xoffset=0;
 while(srcx+xoffset>0){
     xoffset--;
     Bit* target = getHolderAt(srcx+xoffset, srcy).bit();
-    if (target != NULL && target->gameTag() <127){
+    if (target != NULL && target->gameTag() <100){
         xoffset=-9;
     }
     if (dstx==srcx+xoffset&&dsty==srcy && xoffset>-9){
