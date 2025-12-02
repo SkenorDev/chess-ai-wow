@@ -234,7 +234,11 @@ void Chess::updateAI()
 {
     //int currentPlayer = getCurrentPlayer()->playerNumber();
     auto state= stateString();
-    auto _moves = generateAllMoves(state,getCurrentPlayer()->playerNumber());
+    auto turn =getCurrentPlayer()->playerNumber();
+    if (turn==0){
+        turn= -1;
+    }
+    auto _moves = generateAllMoves(state,turn);
     int bestVal = negInfinite;
     BitMove bestMove;
 
@@ -379,7 +383,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
     std::vector<BitMove> moves;
     moves.reserve(256);
     auto board = state;
-    bool whiteTurn = (turn == 0);
+    bool whiteTurn = (turn == -1);
     for (int sq = 0; sq < 64; ++sq) {
         char p = board[sq];
         if (p == '0') continue;
