@@ -244,7 +244,6 @@ void Chess::updateAI()
     auto _moves = generateAllMoves(state,0);
     int bestVal = negInfinite;
     BitMove bestMove;
-    std::string state = stateString();
 
 
     for(auto move : _moves) {
