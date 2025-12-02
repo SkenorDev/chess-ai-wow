@@ -240,8 +240,8 @@ inline int rankOf(int idx) { return idx / 8; }
 // 21 mins in nov 21 for explanation of generate all moves needs
 void Chess::updateAI() 
 {
-    auto beforeState= stateString();
-    auto _moves = generateAllMoves(beforeState,0);
+    auto state= stateString();
+    auto _moves = generateAllMoves(state,0);
     int bestVal = negInfinite;
     BitMove bestMove;
     std::string state = stateString();
@@ -255,7 +255,7 @@ void Chess::updateAI()
         char srcPce = state[srcSquare];
         state[dstSquare] = srcPce;
         state[srcSquare] = '0';
-            int moveVal = -negamax(state, 3, negInfinite,posInfinite ,HUMAN_PLAYER);
+            int moveVal = -negamax(state, 2, negInfinite,posInfinite ,HUMAN_PLAYER);
             // Undo the move
             state[dstSquare] = oldDst;
             state[srcSquare] = srcPce;
@@ -376,6 +376,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
 
      if (whiteTurn) {
     if (p == 'p') {
+        printf("generating pawn\n");
 
         int f = fileOf(sq);
 
@@ -409,7 +410,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
       // Black Turn
       else {
     if (p == 'P') {
-
+        printf("generating pawn\n");
         int f = fileOf(sq);
 
         // single push (sq + 8)
@@ -440,6 +441,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
     }
 }
  if (p == 'n' || p == 'N') {
+            printf("generating knight\n");
             static const int knightMoves[8] = {
                 17, 15, 10, 6, -6, -10, -15, -17
             };
@@ -462,6 +464,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
         // KING
         // -----------------------
         if (p == 'k' || p == 'K') {
+            printf("generating king\n");
             static const int kingMoves[8] = {
                 1, -1, 8, -8, 9, -9, 7, -7
             };
@@ -483,6 +486,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
         // BISHOP
         // -----------------------
         if (p == 'b' || p == 'B') {
+            printf("generating b\n");
             static const int dirs[4] = { 9, -9, 7, -7 };
             for (int d : dirs) {
                 int to = sq;
@@ -510,6 +514,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
         // ROOK
         // -----------------------
         if (p == 'r' || p == 'R') {
+            printf("generating r\n");
             static const int dirs[4] = { 8, -8, 1, -1 };
             for (int d : dirs) {
                 int to = sq;
@@ -543,6 +548,7 @@ std::vector<BitMove> Chess::generateAllMoves(std::string& state, int turn) {
         // QUEEN
         // -----------------------
         if (p == 'q' || p == 'Q') {
+            printf("generating q\n");
             static const int dirs[8] = { 
                 8, -8, 1, -1, 9, -9, 7, -7 
             };
