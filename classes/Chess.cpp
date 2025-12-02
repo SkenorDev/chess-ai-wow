@@ -251,7 +251,7 @@ void Chess::updateAI()
         char srcPce = state[srcSquare];
         state[dstSquare] = srcPce;
         state[srcSquare] = '0';
-            int moveVal = -negamax(state, 4, negInfinite,posInfinite ,HUMAN_PLAYER);
+            int moveVal = -negamax(state, 5, negInfinite,posInfinite ,HUMAN_PLAYER);
             // Undo the move
             state[dstSquare] = oldDst;
             state[srcSquare] = srcPce;
