@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "Grid.h"
 #include "BitBoard.h"
+#include <array>
 constexpr int pieceSize = 80;
 constexpr int negInfinite= -1000000;
 constexpr int posInfinite=  1000000;
@@ -34,7 +35,7 @@ public:
     ~Chess();
 
     void setUpBoard() override;
-
+    bool        gameHasAI() override { return true; }
     bool canBitMoveFrom(Bit &bit, BitHolder &src) override;
     bool canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst) override;
     bool actionForEmptyHolder(BitHolder &holder) override;
@@ -56,6 +57,7 @@ public:
     int evaluateBoard(std::string state);
     std::vector<BitMove> generateAllMoves(std::string& state, int turn);
     Grid* getGrid() override { return _grid; }
+    std::array<char, 64> fenToArray64(const std::string& fen);
     void updateAI();
 int negamax(std::string& state, int depth, int alpha, int beta, int playerColor);
 private:

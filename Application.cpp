@@ -62,7 +62,7 @@ namespace ClassGame {
                         game = new Connect4();
                         game->setUpBoard();
                     }
-                                        if (ImGui::Button("Start Chess")) {
+                        if (ImGui::Button("Start Chess")) {
                         game = new Chess();
                         game->setUpBoard();
                         
@@ -80,7 +80,7 @@ namespace ClassGame {
                     if (ImGui::Button("Start Chess Player 2")) {
                         game = new Chess();
                         game->setUpBoard();
-                        game->setAIPlayer(1);
+                        game->setAIPlayer(2);
                         
                     }
                 } else {

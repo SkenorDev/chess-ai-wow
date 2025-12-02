@@ -1,34 +1,9 @@
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/Experimental.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/Nightly.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/Continuous.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyMemoryCheck.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyStart.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyUpdate.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyConfigure.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyBuild.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyTest.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyCoverage.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlyMemCheck.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/NightlySubmit.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalStart.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalUpdate.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalConfigure.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalBuild.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalTest.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalCoverage.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalMemCheck.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ExperimentalSubmit.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousStart.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousUpdate.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousConfigure.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousBuild.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousTest.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousCoverage.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousMemCheck.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/ContinuousSubmit.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/demo.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/package.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/package_source.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/test.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/edit_cache.dir
-/Users/nathanskinner/Downloads/chess-ai-wow/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/Experimental.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/Nightly.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/Continuous.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/demo.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/PACKAGE.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/ZERO_CHECK.dir

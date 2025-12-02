@@ -1,76 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\Application.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_demo.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_draw.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_tables.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_widgets.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Bit.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Bit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\BitHolder.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\BitHolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Game.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Sprite.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Square.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Square.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\ChessSquare.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\ChessSquare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Grid.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\TicTacToe.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\TicTacToe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Checkers.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Checkers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Othello.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Othello.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Connect4.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Connect4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\classes\Chess.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\classes\Chess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_impl_dx11.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_impl_dx11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\main_win32.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\main_win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\imgui\imgui_impl_win32.cpp">
+    <ClCompile Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\imgui\imgui_impl_win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{C7A24A09-412A-378A-B455-11116CB7E2D7}</UniqueIdentifier>
+      <UniqueIdentifier>{3BF44053-0AE2-3A2D-9321-582132D01A04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

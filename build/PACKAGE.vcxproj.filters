@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-base-main\build\CMakeFiles\85efdd62af6b2ea7c1c38a2f356048a5\PACKAGE_force.rule">
+    <CustomBuild Include="C:\Users\Nathan Skinner\Documents\GitHub\chess-ai-wow\build\CMakeFiles\2c13be08e3c6c997906ca0a8e780cdd2\PACKAGE_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{74E04FAB-FA6A-350E-83D1-0F4F8A62FC10}</UniqueIdentifier>
+      <UniqueIdentifier>{16FFE6A3-663B-3322-A5BC-C4EAB820F57E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

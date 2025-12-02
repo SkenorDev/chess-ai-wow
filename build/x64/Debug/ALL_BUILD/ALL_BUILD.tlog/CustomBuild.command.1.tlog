@@ -1,6 +1,6 @@
-^C:\USERS\NATHAN SKINNER\DOCUMENTS\GITHUB\CHESS-BASE-MAIN\CMAKELISTS.TXT
+^C:\USERS\NATHAN SKINNER\DOCUMENTS\GITHUB\CHESS-AI-WOW\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Nathan Skinner/Documents/GitHub/chess-base-main" "-BC:/Users/Nathan Skinner/Documents/GitHub/chess-base-main/build" --check-stamp-file "C:/Users/Nathan Skinner/Documents/GitHub/chess-base-main/build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow" "-BC:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build" --check-stamp-file "C:/Users/Nathan Skinner/Documents/GitHub/chess-ai-wow/build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -150,3 +150,38 @@ void Chess::generatePawnMoves(std::vector<BitMove>& moves, BitBoard pawnBoard, u
     addPawnBitboardMovesToList(moves,capturesLeft, captureLeftShift);
     addPawnBitboardMovesToList(moves,capturesRight, captureRightShift);
 }
+ // Make the best move
+
+
+// std::vector<BitMove> Chess::generateAllMoves(){
+// std::vector<BitMove> moves;
+// moves.reserve(32);
+// std::string state = stateString();
+// for (int i=0; i<e_numBitboards;i++){
+//     _bitboards[bitIndex] |= 1ULL << i;
+// }
+// _bitboards[WHITE_ALL_PIECES] = _bitboards[WHITE_PAWNS].getData() |
+//  _bitboards[WHITE_KNIGHTS].getData() |
+//   _bitboards[WHITE_BISHOPS].getData() |
+//    _bitboards[WHITE_ROOKS].getData() |
+//     _bitboards[WHITE_QUEENS].getData() |
+//      _bitboards[WHITE_KING].getData();
+
+//      _bitboards[BLACK_ALL_PIECES] = _bitboards[BLACK_PAWNS].getData() |
+//  _bitboards[BLACK_KNIGHTS].getData() |
+//   _bitboards[BLACK_BISHOPS].getData() |
+//    _bitboards[BLACK_ROOKS].getData() |
+//     _bitboards[BLACK_QUEENS].getData() |
+//      _bitboards[BLACK_KING].getData();
+
+//      _bitboards[OCCUPANCY] = _bitboards[WHITE_ALL_PIECES].getData() | _bitboards[BLACK_ALL_PIECES];
+
+//      int bitIndex = _currentPlayer == WHITE ? WHITE_PAWNS : BLACK_PAWNS;
+//     generateKnightMoves(moves, _bitboards[WHITE_KNIGHTS + bitIndex], ~_bitboards[OCCUPANCY].getData());
+//     generatePawnMoves(moves, _bitboards[WHITE_PAWNS + bitIndex], ~_bitboards[OCCUPANCY].getData(), _bitboards[WHITE_ALL_PIECES + oppBitIndex].getData());
+//     generateKingMoves(moves, _bitboards[WHITE_KING + bitIndex], ~_bitboards[OCCUPANCY].getData());
+//     generateRookMoves(moves, _bitboards[WHITE_ROOKS + bitIndex], _bitboards[OCCUPANCY].getData(), _bitboards[WHITE_ALL_PIECES + BitIndex].getData());
+//     generateBishopMoves(moves, _bitboards[WHITE_BISHOPS + bitIndex], _bitboards[OCCUPANCY].getData(), _bitboards[WHITE_ALL_PIECES + BitIndex].getData());
+//     generateQueenMoves(moves, _bitboards[WHITE_QUEENS + bitIndex], _bitboards[OCCUPANCY].getData(), _bitboards[WHITE_ALL_PIECES + BitIndex].getData());
+//      return moves;
+// }

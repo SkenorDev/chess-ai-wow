@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Site BuildName="Darwin-c++"
+<Site BuildName="Win32-MSBuild"
 	BuildStamp="20251103-2006-Experimental"
-	Name="Nathans-MacBook-Pro.local"
-	Generator="ctest-4.1.2"
-	CompilerName="/usr/bin/c++"
-	CompilerVersion="17.0.0.17000404"
-	OSName="macOS"
-	Hostname="Nathans-MacBook-Pro.local"
-	OSRelease="26.1"
-	OSVersion="25B78"
-	OSPlatform="arm64"
+	Name="DESKTOP-13D0CR0"
+	Generator="ctest-4.2.0-rc1"
+	CompilerName="C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe"
+	CompilerVersion="19.44.35219.0"
+	OSName="Windows"
+	Hostname="DESKTOP-13D0CR0"
+	OSRelease="10.0.19045"
+	OSVersion="Windows 10"
+	OSPlatform="AMD64"
 	Is64Bits="1"
-	VendorString="Apple"
-	VendorID="Apple"
-	FamilyID="0"
-	ModelID="0"
-	ModelName="Apple M1 Pro"
-	ProcessorCacheSize="131072"
-	NumberOfLogicalCPU="8"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="1"
+	ModelName="AMD Ryzen 7 5800X 8-Core Processor"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="16"
 	NumberOfPhysicalCPU="8"
-	TotalVirtualMemory="2048"
-	TotalPhysicalMemory="16384"
-	LogicalProcessorsPerPhysical="8"
-	ProcessorClockFrequency="0"
+	TotalVirtualMemory="34741"
+	TotalPhysicalMemory="32693"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3801"
 	>
 	<Testing>
-		<StartDateTime>Nov 29 13:13 PST</StartDateTime>
-		<StartTestTime>1764450792</StartTestTime>
+		<StartDateTime>Dec 02 10:31 Pacific Standard Time</StartDateTime>
+		<StartTestTime>1764700318</StartTestTime>
 		<TestList/>
-		<EndDateTime>Nov 29 13:13 PST</EndDateTime>
-		<EndTestTime>1764450792</EndTestTime>
+		<EndDateTime>Dec 02 10:31 Pacific Standard Time</EndDateTime>
+		<EndTestTime>1764700318</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
