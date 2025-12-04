@@ -234,11 +234,7 @@ void Chess::updateAI()
 {
     //int currentPlayer = getCurrentPlayer()->playerNumber();
     auto state= stateString();
-    auto turn =getCurrentPlayer()->playerNumber();
-    if (turn==0){
-        turn= -1;
-    }
-    auto _moves = generateAllMoves(state,turn);
+    auto _moves = generateAllMoves(state, getCurrentPlayer()->playerNumber() == 0 ? -1 : 1 ); 
     int bestVal = negInfinite;
     BitMove bestMove;
 

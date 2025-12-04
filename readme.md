@@ -1,13 +1,1 @@
-Fork or clone your this chess project into a new GitHub repository.
-
-Add support for FEN stringsLinks to an external site. to your game setup so that instead of the current way you are setting up your game board you are setting it up with a call similar to the following call.
-
-FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-
-Your routine should be able to take just the board position portion of a FEN string, or the entire FEN string like so:
-
-FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-
-(you can ignore the end for now)
-
-This will allow you to quickly check that your castling, promotion and en passant code is working.
+I was able to achieve a depth of 4 on my computer, the ai quite frankly doesnt work great but Im suprised it atleast somewhat works. Overall my challenges came a lot from health, I got sick a lot and had some other issues which led to me falling behind in all my classes and I had to abandon bit boards. This ended up biting me in the ass as I made a quite terrible function to decide legal moves that didnt take strings as an input, this led to a quite complex generation of moves. Overall though it was really satisfying the first time my chess ai didnt make a horrible move and was a very fulfilling experience.
